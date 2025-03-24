@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-3">
-    <h4 class="text-center">Đơn Mượn Sách cần duyệt</h4>
+    <h4 class="text-center">Đơn mượn sách cần duyệt</h4>
     <BookPendingBorrowList
       v-if="pendingTrackingsCount > 0"
       :trackings="pendingTrackings"

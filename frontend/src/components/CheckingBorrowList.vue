@@ -58,7 +58,7 @@ export default {
 <template>
   <div class="container mt-3">
     <!-- Tiêu đề căn giữa và nổi bật -->
-    <h4 class="text-center text-primary mb-3">📚 Đơn Mượn Sách Cần Duyệt</h4>
+    <!-- <h4 class="text-center text-primary mb-3">📚 Đơn Mượn Sách Cần Duyệt</h4> -->
 
     <div class="table-responsive">
       <table class="table table-hover table-bordered text-center">
@@ -104,13 +104,14 @@ h4 {
   font-weight: bold;
 }
 
-/* Làm mượt hiệu ứng hover */
+/* Tăng độ tương phản và làm mượt hiệu ứng hover */
 .clickable-row {
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
+
 .clickable-row:hover {
-  background-color: #f8f9fa;
+  background-color: #f1f5ff; /* Màu xanh nhạt */
 }
 
 /* Tăng kích thước badge và màu sắc */
@@ -138,8 +139,36 @@ h4 {
 
 /* Làm đẹp header bảng */
 .thead-dark th {
-  background-color: #343a40;
-  color: white;
+  background-color: #cfe2ff; /* Màu xanh nhạt */
+  color: black;
   text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Viền tròn góc trên cùng */
+.thead-dark th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.thead-dark th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* Làm đẹp hàng dữ liệu */
+.table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.table tbody tr:hover {
+  background-color: #e9f2ff; /* Xanh nhạt */
+}
+
+/* Làm nổi bật hàng được chọn */
+.table-active {
+  background-color: #b6d4fe !important; /* Màu xanh đậm hơn */
+  font-weight: bold;
 }
 </style>

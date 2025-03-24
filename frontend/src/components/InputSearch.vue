@@ -21,8 +21,14 @@ export default {
 <style scoped>
 .search-box {
   width: 100%;
-  max-width: 500px;
+  max-width: 5000px;
   margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-box input {
+  width: 100%;
 }
 
 .form-control {

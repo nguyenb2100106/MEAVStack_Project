@@ -1,36 +1,36 @@
 <template>
   <div class="account-info">
-    <h1>Thông tin tài khoản</h1>
+    <h1 class="account-title">Thông tin cá nhân</h1>
     <table class="account-table">
-      <tr>
-        <td><strong>Tên Độc giả:</strong></td>
-        <td>{{ user.name }}</td>
-      </tr>
-      <tr>
-        <td><strong>Tên đăng nhập:</strong></td>
-        <td>{{ user.username }}</td>
-      </tr>
-      <tr>
-        <td><strong>Ngày sinh:</strong></td>
-        <td>{{ user.birth }}</td>
-      </tr>
-      <tr>
-        <td><strong>Giới tính:</strong></td>
-        <td>{{ user.gender ? "Nam" : "Nữ" }}</td>
-      </tr>
-      <tr>
-        <td><strong>Địa chỉ:</strong></td>
-        <td>{{ user.address }}</td>
-      </tr>
-      <tr>
-        <td><strong>Số điện thoại:</strong></td>
-        <td>{{ user.phone }}</td>
-      </tr>
+      <tbody>
+        <tr>
+          <td class="label"><strong>Tên Độc giả:</strong></td>
+          <td>{{ user.name }}</td>
+        </tr>
+        <tr>
+          <td class="label"><strong>Tên đăng nhập:</strong></td>
+          <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+          <td class="label"><strong>Ngày sinh:</strong></td>
+          <td>{{ user.birth }}</td>
+        </tr>
+        <tr>
+          <td class="label"><strong>Giới tính:</strong></td>
+          <td>{{ user.gender ? "Nam" : "Nữ" }}</td>
+        </tr>
+        <tr>
+          <td class="label"><strong>Địa chỉ:</strong></td>
+          <td>{{ user.address }}</td>
+        </tr>
+        <tr>
+          <td class="label"><strong>Số điện thoại:</strong></td>
+          <td>{{ user.phone }}</td>
+        </tr>
+      </tbody>
     </table>
 
-    <button class="btn btn-primary" @click="editProfile">
-      Chỉnh sửa thông tin
-    </button>
+    <button class="btn-edit" @click="editProfile">Chỉnh sửa thông tin</button>
   </div>
 </template>
 
@@ -46,7 +46,6 @@ export default {
   async mounted() {
     try {
       const userId = localStorage.getItem("_id");
-
       if (userId) {
         const userData = await UserService.getUser(userId);
         this.user = userData;
@@ -54,7 +53,7 @@ export default {
         this.$router.push({ name: "loginuser" });
       }
     } catch (error) {
-      console.error("Không thể tải thông tin tài khoản", error);
+      console.error("Không thể tải thông tin cá nhân", error);
     }
   },
   methods: {
@@ -71,34 +70,65 @@ export default {
 </script>
 
 <style scoped>
+/* Giao diện tổng thể */
 .account-info {
   max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #e6f0ff; /* Xanh lam nhạt */
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
+/* Tiêu đề */
+.account-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #004085; /* Xanh lam đậm */
+  margin-bottom: 20px;
+}
+
+/* Bảng thông tin */
 .account-table {
   width: 100%;
-  margin-bottom: 20px;
   border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.account-table tbody tr {
+  border-bottom: 1px solid #cce5ff; /* Viền nhạt giữa các dòng */
 }
 
 .account-table td {
-  padding: 10px;
-  border: none; /* Xóa các viền */
+  padding: 12px 15px;
+  text-align: left;
 }
 
-.account-table td:first-child {
-  width: 200px;
+.account-table .label {
+  font-weight: bold;
+  color: black;
+  width: 180px;
+  background: #f8f9fa; /* Màu nền nhẹ cho label */
 }
 
-.account-table td:nth-child(2) {
-  word-wrap: break-word;
-}
-
-button {
+/* Nút chỉnh sửa */
+.btn-edit {
   margin-top: 20px;
+  padding: 10px 18px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3;
 }
 </style>

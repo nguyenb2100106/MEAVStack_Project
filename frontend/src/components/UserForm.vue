@@ -168,7 +168,7 @@ export default {
     },
     cancel() {
       if (this.isRegisterPage) {
-        this.$router.push({ name: "login" });
+        this.$router.push({ name: "loginuser" });
       } else {
         const reply = window.confirm(
           "Bạn có chắc muốn rời khỏi mà không lưu thay đổi?"
