@@ -34,7 +34,7 @@ export default {
       try {
         await UserService.create(data);
         alert("Độc giả đã được thêm thành công.");
-        this.$router.push({ name: "login" });
+        this.$router.push({ name: "loginuser" });
       } catch (error) {
         console.error("Lỗi khi thêm độc giả:", error);
         this.message = "Không thể thêm độc giả. Vui lòng thử lại.";
