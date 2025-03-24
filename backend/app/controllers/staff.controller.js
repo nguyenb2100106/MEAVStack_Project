@@ -18,7 +18,7 @@ exports.create = async (req, res, next) => {
       return next(new ApiError(400, "Username already exists"));
     }
 
-    req.body.password = await bcrypt.hash(req.body.password, 10);
+    // req.body.password = await bcrypt.hash(req.body.password, 10);
 
     const document = await staffService.create(req.body);
     return res.send(document);

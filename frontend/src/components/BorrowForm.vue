@@ -66,7 +66,7 @@
         v-if="borrowLocal._id"
         type="button"
         class="mr-2 btn btn-danger"
-        @click="deleteBorrowingRecord"
+        @click="deleteBorrow"
       >
         <i class="fas fa-trash-alt"></i> Xóa
       </button>
@@ -172,7 +172,7 @@ export default {
       const [year, month, day] = dateString.split("-");
       return `${day}/${month}/${year}`;
     },
-    deleteBorrowRecord() {
+    deleteBorrow() {
       this.$emit("delete:borrow", this.borrowLocal._id);
     },
     Cancel() {

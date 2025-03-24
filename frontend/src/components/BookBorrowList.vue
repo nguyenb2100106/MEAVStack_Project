@@ -24,13 +24,24 @@
             <td class="text-center fw-bold">{{ index + 1 }}</td>
             <td v-if="books[index]">{{ books[index].title }}</td>
             <td v-if="users[index]">{{ users[index].name }}</td>
-            <td>
+            <!-- <td>
               {{
                 tracking.staff_id && staffs[index] ? staffs[index].name : "---"
               }}
+            </td> -->
+            <td>
+              {{
+                tracking.staff_id &&
+                staffs.find((s) => s._id === tracking.staff_id)
+                  ? staffs.find((s) => s._id === tracking.staff_id).name
+                  : "---"
+              }}
             </td>
-            <td>{{ formatDate(tracking.borrow_date) }}</td>
-            <td>{{ formatDate(tracking.return_date) }}</td>
+            <td>{{ tracking.borrow_date }}</td>
+            <td>{{ tracking.return_date }}</td>
+
+            <!-- <td>{{ formatDate(tracking.borrow_date) }}</td>
+            <td>{{ formatDate(tracking.return_date) }}</td> -->
             <td class="text-center">
               <span
                 v-if="tracking.staff_id && tracking.staff_id !== ''"
@@ -122,11 +133,11 @@ export default {
       }
     },
 
-    formatDate(dateStr) {
-      if (!dateStr) return "---";
-      const date = new Date(dateStr);
-      return date.toLocaleDateString("vi-VN");
-    },
+    // formatDate(dateStr) {
+    //   if (!dateStr) return "---";
+    //   const date = new Date(dateStr);
+    //   return date.toLocaleDateString("vi-VN");
+    // },
   },
 };
 </script>

@@ -58,7 +58,7 @@ export default {
     async deleteStaff() {
       if (confirm("Bạn muốn xóa Nhân viên này?")) {
         try {
-          await StaffService.delete(this.staff._id);
+          await StaffService.deleteStaff(this.staff._id);
           this.$router.push({ name: "staffs" });
         } catch (error) {
           console.error(error);

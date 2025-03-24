@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <h4>Thêm Độc giả</h4>
-    <UserForm :user="reuserader" @submit:user="addUser" />
+    <UserForm :user="user" @submit:user="addUser" />
     <p>{{ message }}</p>
   </div>
 </template>

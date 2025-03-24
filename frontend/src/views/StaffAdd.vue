@@ -31,7 +31,7 @@ export default {
   methods: {
     async addStaff(data) {
       try {
-        await StaffService.create(data);
+        await StaffService.createStaff(data);
         alert("Nhân viên đã được thêm thành công.");
         this.$router.push({ name: "staffs" });
       } catch (error) {

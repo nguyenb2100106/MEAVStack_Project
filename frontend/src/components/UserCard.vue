@@ -25,7 +25,7 @@
       <div class="info-item">
         <i class="fas fa-venus-mars"></i>
         <strong>Giới tính:</strong>
-        <span>{{ user.gender }}</span>
+        <span>{{ user.gender ? "Nam" : "Nữ" }}</span>
       </div>
 
       <div class="info-item">

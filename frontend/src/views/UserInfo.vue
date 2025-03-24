@@ -16,7 +16,7 @@
       </tr>
       <tr>
         <td><strong>Giới tính:</strong></td>
-        <td>{{ user.gender }}</td>
+        <td>{{ user.gender ? "Nam" : "Nữ" }}</td>
       </tr>
       <tr>
         <td><strong>Địa chỉ:</strong></td>

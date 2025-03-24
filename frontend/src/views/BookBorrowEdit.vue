@@ -61,7 +61,7 @@ export default {
         try {
           await BookBorrowService.deleteBorrow(this.borrow._id);
           alert("Thông tin mượn sách đã được xóa thành công.");
-          this.$router.push({ name: "bookBorrowingTracking" });
+          this.$router.push({ name: "bookborrow" });
         } catch (error) {
           console.error("Lỗi khi xóa thông tin mượn sách:", error);
           this.message = "Không thể xóa bản ghi. Vui lòng thử lại.";

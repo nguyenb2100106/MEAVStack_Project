@@ -174,7 +174,7 @@ export default {
           "Bạn có chắc muốn rời khỏi mà không lưu thay đổi?"
         );
         if (reply) {
-          this.$router.push({ name: "user" });
+          this.$router.push({ name: "users" });
         }
       }
     },
