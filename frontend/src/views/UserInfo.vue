@@ -4,7 +4,7 @@
     <table class="account-table">
       <tbody>
         <tr>
-          <td class="label"><strong>Tên Độc giả:</strong></td>
+          <td class="label"><strong>Tên người dùng:</strong></td>
           <td>{{ user.name }}</td>
         </tr>
         <tr>

@@ -6,13 +6,13 @@
         class="nav-link"
         :class="{ active: isUser }"
       >
-        Độc giả
+        Người dùng
       </router-link>
       <router-link to="/login" class="nav-link" :class="{ active: !isUser }">
         Nhân viên
       </router-link>
     </nav>
-    <h2 class="text-center mb-4">Đăng nhập Nhân viên</h2>
+    <h2 class="text-center mb-4">Đăng nhập</h2>
     <form @submit.prevent="handleLogin" class="form-signin">
       <div class="mb-3">
         <label for="username" class="form-label">Tên đăng nhập:</label>
@@ -90,7 +90,7 @@ export default {
   margin: 80px auto;
   padding: 30px;
   border-radius: 10px;
-  background: white;
+  background: #e3f2fd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

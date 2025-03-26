@@ -24,6 +24,10 @@ class PublisherService {
   async deletePublisher(id) {
     return (await this.api.delete(`/${id}`)).data;
   }
+
+  async deleteAllPublisher() {
+    return (await this.api.delete("/")).data;
+  }
 }
 
 export default new PublisherService();

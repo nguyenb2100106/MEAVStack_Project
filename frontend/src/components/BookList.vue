@@ -3,7 +3,7 @@
     <table class="table table-hover shadow-sm rounded">
       <thead class="table-primary text-center">
         <tr>
-          <th>#</th>
+          <th>STT</th>
           <th>Tiêu đề</th>
           <th>Tác giả</th>
           <th class="text-end">Số lượng</th>

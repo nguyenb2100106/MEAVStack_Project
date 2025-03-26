@@ -33,11 +33,11 @@ export default {
     async addUser(data) {
       try {
         await UserService.create(data);
-        alert("Độc giả đã được thêm thành công.");
+        alert("Người dùng đã được thêm thành công.");
         this.$router.push({ name: "loginuser" });
       } catch (error) {
-        console.error("Lỗi khi thêm độc giả:", error);
-        this.message = "Không thể thêm độc giả. Vui lòng thử lại.";
+        console.error("Lỗi khi thêm người dùng:", error);
+        this.message = "Không thể thêm người dùng. Vui lòng thử lại.";
       }
     },
   },

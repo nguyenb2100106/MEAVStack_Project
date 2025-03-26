@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h4>Thêm Độc giả</h4>
+    <h4>Thêm người dùng</h4>
     <UserForm :user="user" @submit:user="addUser" />
     <p>{{ message }}</p>
   </div>
@@ -32,11 +32,11 @@ export default {
     async addUser(data) {
       try {
         await UserService.create(data);
-        alert("Độc giả đã được thêm thành công.");
+        alert("Người dùng đã được thêm thành công.");
         this.$router.push({ name: "users" });
       } catch (error) {
-        console.error("Lỗi khi thêm độc giả:", error);
-        this.message = "Không thể thêm độc giả. Vui lòng thử lại.";
+        console.error("Lỗi khi thêm người dùng:", error);
+        this.message = "Không thể thêm người dùng. Vui lòng thử lại.";
       }
     },
   },

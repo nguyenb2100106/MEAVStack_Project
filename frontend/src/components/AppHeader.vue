@@ -14,7 +14,7 @@
           class="nav-link"
           :class="{ active: $route.name === 'users' }"
         >
-          Độc giả
+          Người dùng
         </router-link>
         <router-link
           :to="{ name: 'staffs' }"

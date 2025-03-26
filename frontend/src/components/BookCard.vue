@@ -13,6 +13,15 @@ export default {
   mounted() {
     this.fetchPublisher();
   },
+  watch: {
+    // Theo dõi sự thay đổi của prop 'book'
+    book(newBook, oldBook) {
+      if (newBook._id !== oldBook?._id) {
+        // Chỉ gọi lại nếu sách thay đổi
+        this.fetchPublisher();
+      }
+    },
+  },
   methods: {
     async fetchPublisher() {
       try {
@@ -65,6 +74,10 @@ export default {
         <div class="p-1" v-if="publisher">
           <strong>Nhà xuất bản:</strong>
           {{ publisher.name }}
+        </div>
+        <div class="p-1">
+          <strong>Mô tả:</strong>
+          {{ book.description }}
         </div>
       </div>
     </div>

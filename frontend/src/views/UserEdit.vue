@@ -1,6 +1,6 @@
 <template>
   <div v-if="user" class="page">
-    <h4>Chỉnh sửa Độc giả</h4>
+    <h4>Chỉnh sửa người dùng</h4>
     <UserForm
       :user="user"
       @submit:user="updateUser"
@@ -44,14 +44,14 @@ export default {
     async updateUser(data) {
       try {
         await UserService.updateUser(this.user._id, data);
-        alert("Độc giả đã được cập nhật thành công.");
+        alert("Người dùng đã được cập nhật thành công.");
         this.$router.push({ name: "users" });
       } catch (error) {
         console.error(error);
       }
     },
     async deleteUser() {
-      if (confirm("Bạn muốn xóa Độc giả này?")) {
+      if (confirm("Bạn muốn xóa người dùng này?")) {
         try {
           await UserService.deleteUser(this.user._id);
           this.$router.push({ name: "users" });

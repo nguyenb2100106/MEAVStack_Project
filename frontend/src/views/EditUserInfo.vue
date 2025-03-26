@@ -1,6 +1,6 @@
 <template>
   <div v-if="user" class="page">
-    <h4>Chỉnh sửa thông tin</h4>
+    <!-- <h4>Chỉnh sửa thông tin</h4> -->
     <UserInfoForm :user="user" @submit:user="updateUser" />
     <p>{{ message }}</p>
   </div>
@@ -35,7 +35,7 @@ export default {
     async updateUser(data) {
       try {
         await UserService.updateUser(this.user._id, data);
-        alert("Độc giả đã được cập nhật thành công.");
+        alert("Người dùng đã được cập nhật thành công.");
         this.$router.push({ name: "info" });
       } catch (error) {
         console.error(error);

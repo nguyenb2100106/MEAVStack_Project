@@ -25,7 +25,7 @@ class UserService {
     return (await this.api.delete(`/${id}`)).data;
   }
 
-  async deleteAll() {
+  async deleteAllUser() {
     return (await this.api.delete("/")).data;
   }
 

@@ -54,49 +54,66 @@ export default {
 <style scoped>
 /* Card chứa thông tin */
 .staff-info-card {
-  max-width: 400px;
-  margin: auto;
+  max-width: 400px; /* Đồng bộ với StaffList */
+  margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Header của card */
 .card-header {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 12px 0;
 }
 
 /* Nội dung của card */
 .card-body {
-  padding: 15px;
+  padding: 20px;
   background-color: #f8f9fa;
 }
 
 /* Mỗi dòng thông tin */
 .info-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 30px 130px 1fr;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* Icon */
 .info-item i {
-  width: 24px;
+  font-size: 1.1rem;
   color: #007bff;
-  margin-right: 8px;
+  text-align: center;
 }
 
 /* Label (tên thuộc tính) */
 .info-item strong {
   color: #007bff;
-  min-width: 120px;
-  display: inline-block;
+  font-weight: 600;
+  padding-right: 10px;
 }
 
 /* Nội dung (giá trị) */
 .info-item span {
   color: #333;
   font-weight: 500;
+  word-break: break-word;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .staff-info-card {
+    max-width: 100%;
+  }
+
+  .info-item {
+    grid-template-columns: 25px 110px 1fr;
+    font-size: 0.95rem;
+  }
 }
 </style>

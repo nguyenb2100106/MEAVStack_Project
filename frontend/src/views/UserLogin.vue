@@ -2,13 +2,13 @@
   <div class="login container">
     <nav class="nav justify-content-center mb-4">
       <router-link to="/login/user" class="nav-link" :class="{ active: isUser }"
-        >Độc giả</router-link
+        >Người dùng</router-link
       >
       <router-link to="/login" class="nav-link" :class="{ active: !isUser }"
         >Nhân viên</router-link
       >
     </nav>
-    <h2 class="text-center mb-4">Đăng nhập Độc giả</h2>
+    <h2 class="text-center mb-4">Đăng nhập</h2>
     <form @submit.prevent="handleLogin" class="form-signin">
       <div class="mb-3">
         <label for="username" class="form-label">Tên đăng nhập:</label>
@@ -59,25 +59,6 @@ export default {
     },
   },
   methods: {
-    // async handleLogin() {
-    //   try {
-    //     const response = await UserService.login(this.username, this.password);
-    //     if (response && response.data.token) {
-    //       localStorage.setItem("authToken", response.data.token);
-    //       localStorage.setItem("name", response.data.user.name);
-    //       localStorage.setItem("_id", response.data.user.id);
-    //       localStorage.setItem("role", "user");
-    //       this.$router.push("/bookuser");
-    //     } else {
-    //       this.errorMessage =
-    //         "Đăng nhập thất bại. Vui lòng kiểm tra thông tin đăng nhập.";
-    //     }
-    //   } catch (error) {
-    //     this.errorMessage = "Đăng nhập thất bại. Đã xảy ra lỗi trong hệ thống.";
-    //     console.error(error);
-    //   }
-    // },
-
     async handleLogin() {
       try {
         const response = await UserService.login(this.username, this.password);
@@ -112,7 +93,7 @@ export default {
   margin: 80px auto;
   padding: 30px;
   border-radius: 10px;
-  background: white;
+  background: #e3f2fd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

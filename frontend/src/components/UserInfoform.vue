@@ -1,10 +1,10 @@
 <template>
   <div class="user-form-container">
-    <h3 class="form-title">Thông Tin Độc Giả</h3>
+    <h3 class="form-title">Thông tin người dùng</h3>
 
     <Form @submit="submitUser" :validation-schema="userFormSchema">
       <div class="form-group">
-        <label for="name">Tên Độc giả</label>
+        <label for="name">Tên người dùng</label>
         <Field
           name="name"
           type="text"

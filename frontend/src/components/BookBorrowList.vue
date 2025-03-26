@@ -4,7 +4,7 @@
       <table class="table table-hover align-middle shadow-sm rounded">
         <thead class="table-primary">
           <tr>
-            <th class="text-center">#</th>
+            <th class="text-center">STT</th>
             <th>Tên Sách</th>
             <th>Người Mượn</th>
             <th>Nhân viên</th>
@@ -61,7 +61,7 @@
                 }"
                 class="btn btn-sm btn-warning"
               >
-                <i class="fas fa-edit"></i> Sửa
+                <i class="fas fa-edit"></i> Chỉnh sửa
               </router-link>
             </td>
           </tr>

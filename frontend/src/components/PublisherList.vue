@@ -21,7 +21,7 @@ export default {
     <table v-else class="table table-hover">
       <thead class="thead-light">
         <tr>
-          <th>#</th>
+          <th>STT</th>
           <th>Nhà xuất bản</th>
           <th>Địa chỉ</th>
           <th>Hành động</th>

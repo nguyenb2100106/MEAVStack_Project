@@ -15,9 +15,9 @@
     </div>
 
     <div class="form-group">
-      <label for="user_id">Độc giả</label>
+      <label for="user_id">Người dùng</label>
       <select name="user_id" class="form-control" v-model="borrowLocal.user_id">
-        <option value="">-- Chọn độc giả --</option>
+        <option value="">-- Chọn người dùng --</option>
         <option v-for="user in users" :key="user._id" :value="user._id">
           {{ user.name }}
         </option>
@@ -150,7 +150,7 @@ export default {
       try {
         this.users = await UserService.getAllUsers();
       } catch (error) {
-        console.error("Lỗi khi lấy danh sách độc giả:", error);
+        console.error("Lỗi khi lấy danh sách người dùng:", error);
       }
     },
     async fetchStaffs() {

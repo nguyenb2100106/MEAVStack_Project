@@ -104,7 +104,7 @@ export default {
     async removeAllBooks() {
       if (confirm("Bạn muốn xóa tất cả sách?")) {
         try {
-          await BookService.deleteAll();
+          await BookService.deleteAllBooks();
           this.refreshList();
         } catch (error) {
           console.log(error);

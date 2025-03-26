@@ -26,37 +26,9 @@
     </div>
   </div>
 
-  <!-- <div v-if="isFormVisible" class="borrow-form-overlay">
-    <div class="borrow-form-container">
-      <h4>Thêm Thông tin Mượn Sách</h4>
-      <form @submit.prevent="submitBorrowingForm">
-        <div class="form-group">
-          <label for="return_date">Ngày trả:</label>
-          <input
-            type="date"
-            id="return_date"
-            v-model="borrowing.return_date"
-            class="form-control"
-            required
-          />
-        </div>
-        <button type="submit" class="btn btn-success w-100">
-          Tạo đơn mượn sách
-        </button>
-        <button
-          type="button"
-          class="btn btn-danger w-100"
-          @click="hideBorrowForm"
-        >
-          Hủy
-        </button>
-      </form>
-    </div>
-  </div> -->
-
   <div v-if="isFormVisible" class="borrow-form-overlay">
     <div class="borrow-form-container">
-      <h4>Thêm Thông tin Mượn Sách</h4>
+      <h4>Đơn mượn sách</h4>
       <form @submit.prevent="submitBorrowingForm">
         <div class="form-group">
           <label>Tên sách:</label>

@@ -88,7 +88,7 @@ class UserService {
   }
 
   async deleteAll() {
-    const result = await this.Reader.deleteMany({});
+    const result = await this.User.deleteMany({});
     return result.deletedCount;
   }
 }
